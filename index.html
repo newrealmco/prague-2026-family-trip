@@ -15,7 +15,7 @@
 @media(max-width:420px){.wrap{width:min(100% - 20px,1080px)}.hero h1{font-size:4.3rem}.hero p{font-size:1rem}.trip-facts div{font-size:.87rem}.day h2{font-size:2.15rem}.stop{grid-template-columns:52px 17px 1fr;gap:8px}.stop:not(:last-of-type):after{right:68px}.route-map{height:225px}.map-link{flex:1 1 130px}}
 </style>
 <style>.place-detail{display:inline-flex;align-items:center;gap:6px;min-height:34px;color:var(--teal);text-decoration:none;border-bottom:1px solid rgba(52,126,122,.35)}.place-detail:after{content:"פרטים ומפה";font-size:.68rem;font-weight:800;color:var(--muted);background:#eef6f4;border-radius:999px;padding:3px 7px;white-space:nowrap}.place-detail:hover,.place-detail:focus{color:var(--red);border-color:var(--red)}</style>
-<style>.extras{scroll-margin-top:90px;margin:10px 0 54px}.extras-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.extra-card{display:block;padding:20px;border-radius:20px;text-decoration:none;color:#fff;min-height:145px;box-shadow:var(--shadow)}.extra-card:nth-child(1){background:linear-gradient(135deg,#d65738,#9f3d2a)}.extra-card:nth-child(2){background:linear-gradient(135deg,#347e7a,#225653)}.extra-card:nth-child(3){background:linear-gradient(135deg,#263144,#465a79)}.extra-card b{display:block;font-size:1.35rem}.extra-card span{display:block;margin-top:6px;color:rgba(255,255,255,.82);font-size:.88rem}@media(max-width:700px){.extras-grid{grid-template-columns:1fr}.extra-card{min-height:0}.mobile-nav{grid-template-columns:repeat(4,1fr)!important}}</style>
+<style>.extras{scroll-margin-top:90px;margin:10px 0 54px}.extras-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.extra-card{display:block;padding:20px;border-radius:20px;text-decoration:none;color:#fff;min-height:145px;box-shadow:var(--shadow)}.extra-card:nth-child(1){background:linear-gradient(135deg,#d65738,#9f3d2a)}.extra-card:nth-child(2){background:linear-gradient(135deg,#347e7a,#225653)}.extra-card:nth-child(3){background:linear-gradient(135deg,#263144,#465a79)}.extra-card:nth-child(4){background:linear-gradient(135deg,#76528f,#4b355c)}.extra-card b{display:block;font-size:1.35rem}.extra-card span{display:block;margin-top:6px;color:rgba(255,255,255,.82);font-size:.88rem}@media(max-width:700px){.extras-grid{grid-template-columns:1fr}.extra-card{min-height:0}.mobile-nav{grid-template-columns:repeat(4,1fr)!important}}</style>
 </head>
 <body>
 <header class="hero" id="top">
@@ -60,7 +60,6 @@
 <span class="kicker">המסלול שלנו</span>
 <h2>יום אחרי יום</h2>
 <p>עוגן משמעותי אחד ביום, זמן לאוכל ולמנוחה, וגמישות כשמישהו צריך לעצור.</p>
-<div class="offline">האתר אינו תלוי ב־JavaScript: כל התוכן מוצג גם במובייל, וכל מקום נפתח לעמוד מידע ולקישור ישיר ב־Google Maps.</div>
 </section>
 <section class="extras" id="recommendations">
 <span class="kicker">שומרים לרגע הנכון</span>
@@ -69,6 +68,7 @@
 <a class="extra-card" href="food.html"><b>🍽️ איפה אוכלים</b><span>אוכל צ׳כי, chlebíčky ומקומות שמתאימים למסלול.</span></a>
 <a class="extra-card" href="sweets.html"><b>🥐 מאפים ומתוקים</b><span>Koláče, קונדיטוריות וקינוחים צ׳כיים שכדאי לטעום.</span></a>
 <a class="extra-card" href="shops.html"><b>🛍️ חנויות מיוחדות</b><span>עיצוב צ׳כי, מזכרות מקוריות וחנות לחובבי טראמים.</span></a>
+<a class="extra-card" href="extras.html"><b>🌧️ תוכנית ב׳ ועוד רעיונות</b><span>איים, פעילויות לגשם, קניונים ומסע טעימות של ממתקים.</span></a>
 </div>
 </section>
 
@@ -88,30 +88,12 @@
 <article class="card schedule">
 <h3>מה עושים</h3>
 <div class="stop">
-<span class="time">אחה״צ</span>
-<i class="dot">
-</i>
-<div>
-<strong>יוצאים לדרך</strong>
-<p>טיסה מישראל לפראג.</p>
-</div>
-</div>
-<div class="stop">
 <span class="time">ערב</span>
 <i class="dot">
 </i>
 <div>
-<strong>נוחתים בפראג</strong>
-<p>אוספים מזוודות ונפגשים עם הנהג.</p>
-</div>
-</div>
-<div class="stop">
-<span class="time">בהגעה</span>
-<i class="dot">
-</i>
-<div>
-<strong>הסעה מוזמנת מחכה</strong>
-<p>מיניוואן לשישה נוסעים ושבע מזוודות.</p>
+<strong>מגיעים לפראג</strong>
+<p>מתארגנים וממשיכים לדירה.</p>
 </div>
 </div>
 <div class="stop">
@@ -124,8 +106,7 @@
 </div>
 </div>
 <div class="links">
-<a class="map-link apple" href="https://maps.apple.com/?saddr=Vaclav+Havel+Airport+Prague&daddr=Masarykovo+nabrezi+6+Prague"> Apple Maps</a>
-<a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=Vaclav+Havel+Airport+Prague&destination=Masarykovo+nabrezi+6+Prague&travelmode=driving">Google Maps</a>
+<a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Masarykovo+nabrezi+6+Prague">כתובת הדירה ב־Google Maps</a>
 </div>
 </article>
 <aside class="day-side">
@@ -133,28 +114,7 @@
 <img class="photo" src="https://alexjessicamills.com/wp-content/uploads/2025/11/Charles-Bridge-in-Prague-768x1024.jpg" alt="משפחה על גשר קארל">
 <div class="caption">גשר קארל • צילום: Alex Jessica Mills</div>
 </div>
-<div class="card side">
-<h3>ציר התחנות (אופליין)</h3>
-<div class="route-map">
-<svg viewBox="0 0 400 250">
-<path class="river" d="M330,-20C260,55 365,105 285,160C235,195 275,225 235,275"/>
-<path class="streets" d="M20,45L370,215M20,210L340,30M90,0L160,250"/>
-<path class="route" d="M45,75C135,80 190,130 310,195"/>
-<g class="pin">
-<circle cx="45" cy="75" r="14"/>
-<text x="45" y="75">1</text>
-<circle cx="310" cy="195" r="14"/>
-<text x="310" y="195">2</text>
-</g>
-</svg>
-</div>
-<div class="legend">
-<span>
-<b>1</b>שדה התעופה</span>
-<span>
-<b>2</b>הדירה על הנהר</span>
-</div>
-</div>
+<div class="card side"><h3>הבית שלנו</h3><p>MN6 Luxury Suites<br>Masarykovo nábřeží 6</p><div class="links"><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Masarykovo+nabrezi+6+Prague">📍 פתיחה במפה</a></div></div>
 <div class="card side fact">
 <small>ידעתם?</small>
 <p>הוולטאבה הוא הנהר הארוך בצ׳כיה.</p>
@@ -1000,8 +960,8 @@
 </div>
 <div class="day-title">
 <span class="kicker">יום 9</span>
-<h2>בוקר מוקדם וחוזרים</h2>
-<p>קמים, בודקים שלא נשאר מטען ומגיעים לשדה בלי לחץ.</p>
+<h2>נפרדים מפראג</h2>
+<p>קמים, בודקים שלא נשאר דבר בדירה ונפרדים מהעיר.</p>
 </div>
 </div>
 <div class="day-layout">
@@ -1017,35 +977,13 @@
 </div>
 </div>
 <div class="stop">
-<span class="time">ביציאה</span>
-<i class="dot">
-</i>
-<div>
-<strong>איסוף מהדירה</strong>
-<p>המיניוואן יוצא לשדה.</p>
-</div>
-</div>
-<div class="stop">
 <span class="time">בבוקר</span>
 <i class="dot">
 </i>
 <div>
-<strong><a class="place-detail" href="places.html#airport">שדה התעופה</a></strong>
-<p>צ׳ק־אין, ביטחון וארוחת בוקר.</p>
+<strong>נפרדים מהדירה</strong>
+<p>מבט אחרון על הוולטאבה וחוזרים הביתה.</p>
 </div>
-</div>
-<div class="stop">
-<span class="time">בבוקר</span>
-<i class="dot">
-</i>
-<div>
-<strong>ממריאים הביתה</strong>
-<p>טיסה מפראג לישראל.</p>
-</div>
-</div>
-<div class="links">
-<a class="map-link" href="https://www.google.com/maps/dir/?api=1&origin=Masarykovo+nabrezi+6+Prague&destination=Vaclav+Havel+Airport+Prague&travelmode=driving">פתיחת המסלול ב־Google Maps</a>
-<a class="map-link apple" href="https://maps.apple.com/?saddr=Masarykovo+nabrezi+6+Prague&daddr=Vaclav+Havel+Airport+Prague"> Apple Maps</a>
 </div>
 </article>
 <aside class="day-side">
@@ -1053,10 +991,7 @@
 <img class="photo" src="https://pravda24.cz/wp-content/uploads/2022/10/640px-Praha_2_Pevnost_Vysehrad_20170808_018-e1667167600132.jpg" alt="להתראות פראג">
 <div class="caption">להתראות, פראג • Wikimedia Commons</div>
 </div>
-<div class="card side fact">
-<small>ידעתם?</small>
-<p>שדה התעופה נקרא על שם ואצלב האוול, הנשיא הראשון של צ׳כיה.</p>
-</div>
+<div class="card side fact"><small>רגע אחרון</small><p>כל אחד בוחר את המקום שהוא הכי אהב בטיול ואת הדבר הראשון שיספר בבית.</p></div>
 <div class="card side quiz">
 <h3>חידת היום 🧠</h3>
 <p>מה הדבר האחרון שבודקים?</p>
@@ -1074,20 +1009,6 @@
 <h2>הדברים הפרקטיים</h2>
 <div class="practical-grid">
 <article class="card">
-<div class="info">
-<span class="icon">✈️</span>
-<div>
-<strong>יום ההגעה</strong>
-<span>16 בספטמבר</span>
-</div>
-</div>
-<div class="info">
-<span class="icon">🚐</span>
-<div>
-<strong>הסעה משדה התעופה</strong>
-<span>מיניוואן מוזמן לשישה נוסעים ושבע מזוודות</span>
-</div>
-</div>
 <div class="info">
 <span class="icon">🏠</span>
 <div>
@@ -1109,13 +1030,6 @@
 <span>בכל עצירה מחפשים גם מנה צמחונית מלאה.</span>
 </div>
 </div>
-<div class="info">
-<span class="icon">🛫</span>
-<div>
-<strong>יום החזרה</strong>
-<span>24 בספטמבר</span>
-</div>
-</div>
 </article>
 <article class="card">
 <h3>צ׳קליסט משפחתי</h3>
@@ -1126,10 +1040,6 @@
 <label class="check">
 <input type="checkbox">
 <span>ביטוח נסיעות, מזוודות וטלפונים</span>
-</label>
-<label class="check">
-<input type="checkbox">
-<span>כרטיסי טיסה ופרטי ההסעה אופליין</span>
 </label>
 <label class="check">
 <input type="checkbox">
