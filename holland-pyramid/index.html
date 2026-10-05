@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Pyramid" />
+  <title>פירמידת הולנד</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div><div class="eyebrow">Holland Pyramid</div><h1>פירמידת הולנד</h1></div>
+      <button id="installBtn" class="ghost small hidden">התקנה</button>
+    </header>
+
+    <main>
+      <section id="screen-home" class="screen active">
+        <div class="hero card">
+          <div>
+            <div class="muted">התוכנית הנוכחית</div>
+            <h2 id="currentLevelName">רמה 0A</h2>
+            <div id="currentLevelPattern" class="pattern">1 ← 2 ← 3</div>
+          </div>
+          <button id="startWorkoutBtn" class="primary large">התחל אימון</button>
+        </div>
+
+        <div class="grid two">
+          <div class="card stat"><span class="muted">אימונים הושלמו</span><strong id="totalWorkouts">0</strong></div>
+          <div class="card stat"><span class="muted">האימון האחרון</span><strong id="lastWorkoutText">עדיין לא</strong></div>
+        </div>
+
+        <div class="card">
+          <div class="section-title-row"><h3>התקדמות</h3><span id="progressBadge" class="badge">מתחילים</span></div>
+          <div class="progress-line"><div id="levelProgressBar"></div></div>
+          <p id="progressText" class="muted"></p>
+          <div id="promotionBox" class="promotion hidden">
+            <strong>אפשר לשקול התקדמות</strong>
+            <p id="promotionReason"></p>
+            <button id="promoteBtn" class="secondary">עבור לרמה הבאה</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3>חמשת התרגילים</h3>
+          <div id="exercisePreview" class="exercise-preview"></div>
+        </div>
+      </section>
+
+      <section id="screen-workout" class="screen">
+        <div class="workout-head">
+          <button id="exitWorkoutBtn" class="ghost">יציאה</button>
+          <div class="timer-wrap"><div class="muted">זמן אימון</div><div id="workoutTimer" class="big-timer">00:00</div></div>
+          <button id="pauseWorkoutBtn" class="ghost">השהה</button>
+        </div>
+        <div class="progress-line workout-progress"><div id="workoutProgressBar"></div></div>
+        <div id="workoutCounter" class="muted center">0 / 0</div>
+
+        <div class="card current-card">
+          <div class="muted">עכשיו</div>
+          <h2 id="currentExerciseName"></h2>
+          <div class="rep-box"><span id="currentExerciseReps" class="reps"></span><span id="currentExerciseUnit" class="muted"></span></div>
+          <div id="currentExerciseVisual" class="exercise-visual"></div>
+          <ul id="currentExerciseInstructions" class="instructions"></ul>
+        </div>
+
+        <div class="card next-card"><div class="muted">הבא</div><strong id="nextExerciseText">—</strong></div>
+        <div class="workout-actions">
+          <button id="restBtn" class="secondary">מנוחה 45 שנ׳</button>
+          <button id="doneStepBtn" class="primary large">סיימתי</button>
+        </div>
+
+        <div id="restOverlay" class="rest-overlay hidden">
+          <div class="rest-content"><div class="muted">מנוחה</div><div id="restTimer" class="rest-timer">00:45</div><button id="skipRestBtn" class="ghost">דלג</button></div>
+        </div>
+      </section>
+
+      <section id="screen-finish" class="screen">
+        <div class="card"><div class="success-mark">✓</div><h2>האימון הושלם</h2><p id="finishSummary" class="muted"></p></div>
+        <div class="card">
+          <h3>כמה קשה היה?</h3>
+          <div class="rpe-row"><input id="difficultyInput" type="range" min="1" max="10" step="1" value="5" /><div id="difficultyValue" class="rpe-value">5/10</div></div>
+          <div class="rpe-labels"><span>קל</span><span>בינוני</span><span>קשה מאוד</span></div>
+        </div>
+        <div class="card">
+          <h3>דופק, אופציונלי</h3><p class="muted small-text">אפשר להזין ידנית נתונים מ‑Apple Health.</p>
+          <div class="field-grid">
+            <label>דופק ממוצע<input id="avgHrInput" type="number" inputmode="numeric" min="30" max="230" placeholder="למשל 112" /></label>
+            <label>דופק מרבי<input id="maxHrInput" type="number" inputmode="numeric" min="30" max="240" placeholder="למשל 136" /></label>
+            <label>דופק במנוחה<input id="restingHrInput" type="number" inputmode="numeric" min="30" max="160" placeholder="אם רלוונטי" /></label>
+          </div>
+        </div>
+        <div class="card"><h3>הערות</h3><textarea id="notesInput" rows="4" placeholder="מה הרגיש קל? מה היה קשה? כאב? נשימה? טכניקה?"></textarea></div>
+        <button id="saveWorkoutBtn" class="primary large full">שמור ביומן</button>
+      </section>
+
+      <section id="screen-history" class="screen">
+        <div class="section-title-row"><h2>יומן אימונים</h2><button id="clearHistoryBtn" class="ghost danger small">נקה</button></div>
+        <div id="historyList" class="history-list"></div>
+      </section>
+
+      <section id="screen-coach" class="screen">
+        <div class="card">
+          <h2>נתונים למאמן</h2>
+          <p class="muted">ייצוא אחד מכיל את יומן האימונים, התוכנית הנוכחית ונתוני הדופק שהזנת. אפשר לצרף אותו לשיחה איתי ואעדכן את התוכנית לפי הנתונים.</p>
+          <div class="stack"><button id="exportJsonBtn" class="primary">ייצא JSON מלא</button><button id="exportCsvBtn" class="secondary">ייצא CSV של היומן</button></div>
+        </div>
+        <div class="card">
+          <h3>ייבוא תוכנית מעודכנת</h3>
+          <p class="muted small-text">בהמשך אוכל להחזיר לך קובץ תוכנית מעודכן. הייבוא משנה את התוכנית בלבד, לא את היומן.</p>
+          <input id="programFileInput" type="file" accept=".json,application/json" />
+          <button id="importProgramBtn" class="secondary full">ייבא תוכנית</button><div id="importStatus" class="muted small-text"></div>
+        </div>
+        <div class="card"><h3>Apple Health</h3><p class="muted">בגרסת ווב אין גישה ישירה ל‑HealthKit באייפון. כרגע מזינים דופק ידנית אחרי אימון. בעתיד אפשר להוסיף ייבוא מקובץ Health או לבנות עטיפת iOS/Shortcut שתעביר נתונים אוטומטית.</p></div>
+      </section>
+    </main>
+
+    <nav class="bottom-nav">
+      <button data-screen="home" class="nav-btn active">בית</button>
+      <button data-screen="history" class="nav-btn">יומן</button>
+      <button data-screen="coach" class="nav-btn">מאמן</button>
+    </nav>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
